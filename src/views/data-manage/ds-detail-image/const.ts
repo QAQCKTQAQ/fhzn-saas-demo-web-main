@@ -1,0 +1,2 @@
+// 弹框发布发布
+export const ASYNC_SUBSCRIBE_PUBLIC = 'ASYNC_SUBSCRIBE_PUBLIC'

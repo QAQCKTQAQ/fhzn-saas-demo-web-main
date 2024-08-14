@@ -1,0 +1,136 @@
+.data-mark-page {
+	overflow: hidden;
+	border-radius: 6px;
+	.icon-box {
+		width: 36px;
+		height: 36px;
+		padding: 4px;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 2px;
+	}
+	.icon-box:hover {
+		background: #000000;
+	}
+	.icon-box.active {
+		background: #000000;
+	}
+	.label-image-box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		.header-box {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			justify-items: center;
+			width: 100%;
+			height: 56px;
+			padding: 0 24px;
+			font-size: 16px;
+			color: #ffffff;
+			background: #2c2d2e;
+			border-bottom: 1px solid #aaaaaa;
+			.label-logo {
+				display: flex;
+				align-items: center;
+				font-size: 18px;
+				label {
+					margin-left: 8px;
+				}
+			}
+		}
+		.canvas-box {
+			position: relative;
+			display: flex;
+			flex: auto;
+			width: 100%;
+			height: 0;
+			background: #aaaaaa;
+			.side-tool-box {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 56px;
+				height: 100%;
+				padding-top: 24px;
+				font-size: 16px;
+				color: #ffffff;
+				background: #2c2d2e;
+				box-shadow: -8px 12px 8px 5px #ffffff;
+			}
+			.canvas-content-box {
+				position: relative;
+				flex: auto;
+				width: 0;
+				height: 100%;
+				#canvas {
+					width: 100%;
+					height: 100%;
+					cursor: crosshair;
+				}
+			}
+			.comment-result-box {
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				width: 200px;
+				height: 100%;
+				font-size: 14px;
+				color: #ffffff;
+				background: #2c2d2e;
+				box-shadow: -6px 0 8px -8px #ffffff;
+				ul {
+					overflow-y: auto;
+				}
+				.comment-result-title {
+					padding: 8px;
+					font-weight: bold;
+					border-bottom: 1px solid #aaaaaa;
+				}
+				.comment-result-label-box {
+					display: flex;
+					justify-content: space-between;
+					padding: 10px 16px;
+					cursor: pointer;
+					.hover-icon:hover {
+						color: @primary-color;
+					}
+					.select-label-box {
+						display: flex;
+						flex: auto;
+						align-items: center;
+						.ant-select-selector {
+							height: 24px;
+							color: #ffffff;
+							background: transparent;
+							border: none;
+							.ant-select-selection-item {
+								line-height: 24px;
+							}
+						}
+						.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+							border-color: transparent;
+							box-shadow: none;
+						}
+						.ant-select-selector:hover {
+							border-bottom: 1px solid #ffffff;
+						}
+
+						padding-right: 8px;
+					}
+					.select-label-name {
+						width: 100%;
+						margin-left: 6px;
+					}
+				}
+				.comment-result-label-box:hover {
+					background: #000000;
+				}
+			}
+		}
+	}
+}

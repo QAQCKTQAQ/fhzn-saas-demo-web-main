@@ -1,0 +1,93 @@
+.m-page-data-query-multiple {
+	.list-box {
+		position: relative;
+		flex: 1;
+		height: 100%;
+		padding: 0 16px 24px;
+		overflow-y: auto;
+		background-color: #ffffff;
+		.tool {
+			position: sticky;
+			top: 0;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 16px 0;
+			background: #ffffff;
+			.title-box {
+				margin-bottom: 0;
+			}
+		}
+		.list-view-box {
+			.list-item {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				width: 180px;
+				height: 200px;
+				overflow: hidden;
+				border: 1px solid #f0f2f5;
+				border-radius: 10px;
+				box-shadow: 0 2px 6px #cccccc;
+				.item-check-box {
+					position: absolute;
+					top: 8px;
+					right: 8px;
+				}
+				.active {
+					color: @primary-color;
+				}
+				.unactive {
+					color: #cccccc;
+				}
+				.image-info {
+					flex: 1;
+				}
+				.image {
+					width: 100%;
+					height: 80px;
+					overflow: hidden;
+					object-fit: cover;
+				}
+				.title {
+					padding: 10px 16px;
+					overflow: hidden;
+					font-size: 16px;
+					font-weight: bold;
+					color: rgb(0 0 0 / 85%);
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				.sub-title {
+					padding: 0 16px;
+					overflow: hidden;
+					font-size: 14px;
+					color: rgb(0 0 0 / 85%);
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				.item-info {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					height: 40px;
+					padding: 0 16px;
+					border-top: 1px solid #f0f2f5;
+					.time {
+						margin-left: 8px;
+						overflow: hidden;
+						font-size: 12px;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+		.page-box {
+			display: flex;
+			justify-content: center;
+			margin-top: 24px;
+		}
+	}
+}

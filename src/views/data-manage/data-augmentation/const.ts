@@ -1,0 +1,1 @@
+export const ASYNC_IMAGE_HANDLE = 'ASYNC_IMAGE_HANDLE'

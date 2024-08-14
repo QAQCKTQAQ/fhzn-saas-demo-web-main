@@ -1,0 +1,183 @@
+/* Reset style sheet */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+	border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+	content: '';
+	content: none;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+html,
+body,
+#root {
+	width: 100%;
+	height: 100%;
+}
+.ant-modal-header {
+	border-bottom: none !important;
+}
+.ant-modal-footer {
+	border-top: none !important;
+}
+
+/**
+*	重置 ant Image 预览icon以及文件不展示
+**/
+.ant-image {
+	.ant-image-mask {
+		.ant-image-mask-info {
+			width: 14px;
+			height: 16px;
+			padding: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+/***
+重置 ant-modal下面 ant-table的样式
+*/
+.ant-modal {
+	.ant-table {
+		background-color: #ffffff !important;
+		thead {
+			tr {
+				th {
+					background-color: #fafafa !important;
+					border-bottom: #f0f0f0 !important;
+				}
+			}
+		}
+		.ant-table-tbody {
+			tr {
+				td {
+					border-bottom: 1px solid #f0f0f0;
+					transition: background 0.3s;
+				}
+			}
+			tr.ant-table-row:hover {
+				td {
+					background-color: #fafafa !important;
+				}
+			}
+		}
+	}
+}

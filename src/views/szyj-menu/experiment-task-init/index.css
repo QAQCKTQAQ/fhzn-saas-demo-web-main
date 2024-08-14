@@ -1,0 +1,108 @@
+@keyframes rotation {
+	0% {
+		transform: translateY(0);
+		transform: translateY(0px);
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		-o-transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(8px);
+		-webkit-transform: translateY(8px);
+		-moz-transform: translateY(8px);
+		-ms-transform: translateY(8px);
+		-o-transform: translateY(8px);
+	}
+}
+@keyframes rotationY {
+	0% {
+		transform: translateY(0);
+		transform: translateY(0px);
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+}
+	100% {
+		transform: translateY(4px);
+		-webkit-transform: translateY(4px);
+		-moz-transform: translateY(4px);
+		-ms-transform: translateY(4px);
+		-o-transform: translateY(4px);
+}
+}
+.loader-init-experiment {
+	width: 48px;
+	height: 48px;
+	box-shadow: #0052d9;
+	/* width: 38px;
+	height: 38px;
+	border: 2px solid #00a870;
+	border-radius: 50%;
+	display: inline-block; */
+	position: relative;
+	-webkit-animation: rotation 1s linear infinite;
+	animation: rotation 1s linear infinite;
+}
+.loader-init-experiment:before {
+	left: auto;
+	top: auto;
+	right: 0;
+	bottom: 0;
+	content: '';
+	position: absolute;
+	background: #0052d9;
+	width: 6px;
+	height: 6px;
+	transform: translate(-150%, -150%);
+	border-radius: 50%;
+}
+.loader-init-experiment:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #0052d9;
+	width: 6px;
+	height: 6px;
+	transform: translate(150%, 150%);
+	border-radius: 50%;
+}
+.loader-init-experiment-end {
+	width: 48px;
+	height: 48px;
+	box-shadow: #0052d9;
+	/*width: 38px;
+	height: 38px;
+	border: 2px solid #00a870;
+	border-radius: 50%;
+	display: inline-block;
+	*/position: relative;
+	-webkit-animation: rotationY 1s linear infinite;
+	animation: rotationY 1s linear infinite;
+}
+.loader-init-experiment-end:before {
+	left: auto;
+	top: auto;
+	right: 0;
+	bottom: 0;
+	content: '';
+	position: absolute;
+	background: #0052d9;
+	width: 6px;
+	height: 6px;
+	transform: translate(-150%, -150%);
+	border-radius: 50%;
+}
+.loader-init-experiment-end:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: -10px;
+	background: #0052d9;
+	width: 6px;
+	height: 6px;
+	transform: translate(150%, 150%);
+	border-radius: 50%;
+}

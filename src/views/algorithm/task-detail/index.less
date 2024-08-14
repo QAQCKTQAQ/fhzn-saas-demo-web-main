@@ -1,0 +1,140 @@
+.m-page-training-task-detail {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	.layout-box {
+		display: flex;
+		height: 100%;
+		.side-left {
+			width: 280px;
+			height: 100%;
+			padding: 16px;
+			margin-right: 8px;
+			overflow-y: auto;
+			background: #ffffff;
+			.ant-form-item {
+				margin-bottom: 8px;
+				.ant-form-item-label {
+					label {
+						color: #7a7d84;
+					}
+				}
+			}
+			.ant-form-item.comment {
+				.ant-form-item-row {
+					display: block;
+				}
+			}
+		}
+		.side-right {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			height: 100%;
+			overflow: auto;
+			.indicator-image-box {
+				padding: 8px;
+				border: 1px solid rgb(0 0 0 / 45%);
+				border-radius: 8px;
+			}
+			.training-setting-box,
+			.source-info-box,
+			.operation-info-box {
+				padding: 16px;
+				margin-bottom: 8px;
+				background: #ffffff;
+			}
+			.indicators-info-box {
+				flex: 1;
+				padding: 16px;
+				margin-bottom: 0;
+				background: #ffffff;
+			}
+			.ant-form-item {
+				margin-bottom: 16px;
+				.ant-form-item-label {
+					label {
+						color: #7a7d84;
+					}
+				}
+			}
+		}
+	}
+	.header-title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 10px;
+		margin-bottom: 24px;
+		font-size: 14px;
+		font-weight: 500;
+		color: #242a36;
+		.ant-btn-link {
+			padding: 0;
+		}
+	}
+	.header-title::before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 2px;
+		height: 60%;
+		margin: auto;
+		content: '';
+		background: #242a36;
+	}
+	.refresh-icon {
+		position: absolute;
+		top: 10px;
+		background-color: #000c19;
+	}
+	.log-modal-style {
+		height: 80vw;
+		overflow: hidden;
+		background-color: #000c19;
+	}
+	.check-more {
+		color: #1890ff;
+		text-align: center;
+	}
+}
+.log-content-style {
+	position: relative;
+	width: calc(100vw - 500px) !important;
+	height: calc(100vh - 100px) !important;
+	.ant-modal-centered .ant-modal {
+		top: 0;
+		display: inline-block;
+		width: auto !important;
+		padding-bottom: 0;
+		text-align: left;
+		vertical-align: middle;
+		background-color: #000c19 !important;
+	}
+	.ant-modal-content {
+		position: relative;
+		align-items: center;
+		width: calc(100vw - 500px);
+		height: calc(100vh - 100px);
+		margin: 0;
+		overflow: hidden;
+		color: #ffffff;
+		pointer-events: auto;
+		background-color: #000c19 !important;
+		background-clip: padding-box;
+		border: 0;
+		border-radius: 2px;
+		box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+		.ant-modal-body {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			overflow-x: hidden;
+			overflow-y: auto;
+			background-color: #000c19 !important;
+		}
+	}
+}

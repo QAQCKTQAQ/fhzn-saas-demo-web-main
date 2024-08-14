@@ -1,0 +1,21 @@
+# 系统的 appCode 唯一标示
+# 如果接入 权限系统 需要在权限系统中维护对应的 app
+X-APP-CODE: YBK
+
+# api前缀，无业务意义
+# 为了支持透传功能，区分 ajax 请求和正常页面访问，如
+# 由于是单页应用，使用 HTML5 history 模式，需要对页面请求使用 主页 渲染
+apiPrefix: /api
+
+# 后端 Java 服务接口地址
+backendMap:
+  development: http://localhost:18081
+  test: http://localhost:18081
+  staging: http://localhost:18081
+  production: http://localhost:18081
+
+authMap:
+  development: http://localhost:18081
+  test: http://localhost:18081
+  staging: http://localhost:18081
+  production: http://localhost:18081

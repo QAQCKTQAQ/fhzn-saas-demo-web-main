@@ -1,0 +1,22 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: maoyueer
+ * @Date: 2023-03-17 13:32:32
+ * @LastEditors: maoyueer
+ * @LastEditTime: 2023-03-28 13:17:10
+ */
+// 弹框发布订阅key
+export const ASYNC_SUBSCRIBE_ROLE_MODAL = 'ASYNC_SUBSCRIBE_ROLE_MODAL'
+// 角色关联用户列表key
+export const ASYNC_SUBSCRIBE_ASSIGNEDUSERS_MODAL = 'ASYNC_SUBSCRIBE_ASSIGNEDUSERS_MODAL'
+// 权限分配
+export const ASYNC_SUBSCRIBE_RIGHT_MODAL = 'ASYNC_SUBSCRIBE_RIGHT_MODAL'
+// 资源列表
+export const ASYNC_SUBSCRIBE_TREE_DATA = 'ASYNC_SUBSCRIBE_TREE_DATA'
+// 角色已绑定资源列表
+export const ASYNC_SUBSCRIBE_RELATION_USER_TREE_DATA = 'ASYNC_SUBSCRIBE_RELATION_USER_TREE_DATA'
+// 当前权限分配角色ID
+export const ASYNC_SUBSCRIBE_ROLE_ID = 'ASYNC_SUBSCRIBE_ROLE_ID'
+// 提交
+export const ASYNC_SUBSCRIBE_SUBMIT = 'ASYNC_SUBSCRIBE_SUBMIT'

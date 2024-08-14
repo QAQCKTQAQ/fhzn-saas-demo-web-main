@@ -1,0 +1,4 @@
+// 弹框发布订阅key
+export const ASYNC_SUBSCRIBE_MODAL = 'ASYNC_SUBSCRIBE_MODAL'
+// 权限分配弹框 key
+export const ASYNC_SUBSCRIBE_AUTH_MODAL = 'ASYNC_SUBSCRIBE_AUTH_MODAL'

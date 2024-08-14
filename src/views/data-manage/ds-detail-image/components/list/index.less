@@ -1,0 +1,117 @@
+.p-data-set-image-list {
+	.list-box {
+		position: relative;
+		flex: 1;
+		height: 100%;
+		padding: 0 16px 24px;
+		overflow-y: auto;
+		background-color: #ffffff;
+		.icon-operate-small {
+			width: 35px;
+			height: 35px;
+		}
+		.tool {
+			position: sticky;
+			top: 0;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background: #ffffff;
+			.ant-tabs {
+				width: 100%;
+			}
+			.icon-blue-item {
+				position: relative;
+				display: inline-block;
+				height: 32px;
+				padding: 4px 15px;
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 1.5715;
+				color: #40a9ff;
+				text-align: center;
+				white-space: nowrap;
+				touch-action: manipulation;
+				cursor: pointer;
+				user-select: none;
+				background: rgb(64 169 255 / 20%);
+				background-image: none;
+				border: 1px solid transparent;
+				border-color: transparent;
+				border-radius: 50px;
+				transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+			}
+		}
+		.list-view-box {
+			.list-item {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				width: 180px;
+				height: 200px;
+				overflow: hidden;
+				border: 1px solid #f0f2f5;
+				border-radius: 10px;
+				box-shadow: 0 2px 6px #cccccc;
+				.item-check-box {
+					position: absolute;
+					top: 8px;
+					right: 8px;
+				}
+				.active {
+					color: @primary-color;
+				}
+				.unactive {
+					color: #cccccc;
+				}
+				.image-info {
+					flex: 1;
+				}
+				.image {
+					width: 100%;
+					height: 80px;
+					overflow: hidden;
+					object-fit: cover;
+				}
+				.title {
+					padding: 10px 16px;
+					overflow: hidden;
+					font-size: 16px;
+					font-weight: bold;
+					color: rgb(0 0 0 / 85%);
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				.sub-title {
+					padding: 0 16px;
+					overflow: hidden;
+					font-size: 14px;
+					color: rgb(0 0 0 / 85%);
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				.item-info {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					height: 40px;
+					padding: 0 16px;
+					border-top: 1px solid #f0f2f5;
+					.time {
+						margin-left: 8px;
+						overflow: hidden;
+						font-size: 12px;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+		.page-box {
+			display: flex;
+			justify-content: center;
+			margin-top: 24px;
+		}
+	}
+}

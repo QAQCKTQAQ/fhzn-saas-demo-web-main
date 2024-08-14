@@ -1,0 +1,83 @@
+.m-p-data-augmentation {
+	position: relative;
+	.ant-card {
+		position: relative;
+		height: 100%;
+	}
+	.handle-tools {
+		display: flex;
+		width: fit-content;
+		height: 32px;
+		padding: 0 16px;
+		margin-bottom: 24px;
+		font-size: 16px;
+		color: #ffffff;
+		cursor: pointer;
+		background-color: rgb(0 0 0 / 50%);
+		border-radius: 32px;
+		a {
+			color: #ffffff;
+		}
+		.anticon {
+			padding: 4px;
+			border-radius: 4px;
+		}
+		.anticon:hover {
+			background: #000000;
+		}
+	}
+	.loader {
+		width: 100%;
+		height: 100%;
+	}
+	.editer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		.canvas {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			background: #fafafa;
+			.cropper-hidden {
+				display: none;
+			}
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+		.tool {
+			position: absolute;
+			bottom: 24px;
+			left: 50%;
+			z-index: 2015;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			width: 300px;
+			height: 32px;
+			padding: 0 16px;
+			margin-left: -150px;
+			font-size: 16px;
+			color: #ffffff;
+			cursor: pointer;
+			background-color: rgb(0 0 0 / 50%);
+			border-radius: 32px;
+			.anticon {
+				padding: 6px;
+				border-radius: 4px;
+			}
+			.anticon:hover {
+				background: #000000;
+			}
+		}
+	}
+}

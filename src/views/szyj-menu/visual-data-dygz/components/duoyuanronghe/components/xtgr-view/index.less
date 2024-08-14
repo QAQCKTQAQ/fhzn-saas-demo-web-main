@@ -1,0 +1,58 @@
+.rzzc-box {
+	.table {
+		border: 1px solid #cccccc;
+		border-radius: 5px;
+		.ld-code-box {
+			display: flex;
+		}
+		.td {
+			position: relative;
+			flex: 1;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			border: 1px solid #cccccc;
+			.ld {
+				position: absolute;
+				top: -20px;
+				right: 8px;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			.ld::before {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: -8px;
+				width: 2px;
+				height: 12px;
+				margin: auto;
+				content: '';
+				background: #000000;
+				border-radius: 1px;
+			}
+			.gr {
+				position: absolute;
+				bottom: -20px;
+				left: 8px;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			.gr::after {
+				position: absolute;
+				top: 0;
+				right: -8px;
+				bottom: 0;
+				width: 2px;
+				height: 12px;
+				margin: auto;
+				content: '';
+				background: #000000;
+				border-radius: 1px;
+			}
+		}
+		.td-box {
+			display: flex;
+		}
+	}
+}

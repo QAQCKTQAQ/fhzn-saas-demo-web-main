@@ -1,0 +1,26 @@
+.data-params-box {
+	max-height: 50vh;
+	overflow-y: auto;
+	color: #7a7d84;
+	.param-col-box {
+		display: flex;
+		align-items: center;
+		padding: 8px 0;
+		border: 1px solid #f0f2f5;
+		.label {
+			flex-basis: 360px;
+			text-align: right;
+		}
+	}
+	.param-col-box:nth-child(odd) {
+		background: #f0f2f5;
+	}
+	.value {
+		flex: 1;
+		width: 100%;
+		overflow-x: auto;
+		font-weight: 500;
+		color: #000000;
+		text-align: center;
+	}
+}

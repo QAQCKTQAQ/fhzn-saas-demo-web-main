@@ -1,0 +1,35 @@
+.p-code-data-topology-drawer {
+	::-webkit-scrollbar {
+		display: none;
+	}
+	.code-data-box {
+		display: flex;
+		height: 100%;
+		.data-box {
+			flex: 2;
+			height: 100%;
+			overflow-x: hidden;
+			overflow-y: auto;
+			.order-box {
+				flex: 1;
+				height: 100%;
+				padding: 16px;
+				overflow-y: hidden;
+				background: #ffffff;
+			}
+			.params-box {
+				flex: 1;
+				height: 100%;
+				padding: 16px 0;
+				overflow-y: hidden;
+				background: #ffffff;
+			}
+		}
+	}
+	.ant-drawer-body {
+		padding: 0;
+	}
+	.ant-drawer-header {
+		padding: 16px 8px;
+	}
+}

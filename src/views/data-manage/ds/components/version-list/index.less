@@ -1,0 +1,44 @@
+.m-ds-version-list-box {
+	.version-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 200px;
+		padding: 24px 24px 8px;
+		background: #ffffff;
+		border-radius: 10px;
+		box-shadow: 0 0 7px 0 #f0f2f5;
+		.version-icon {
+			position: absolute;
+			top: -1px;
+			right: -1px;
+			font-weight: bold;
+		}
+		.statistic-box {
+			display: flex;
+			justify-content: space-around;
+		}
+		.des-info-box {
+			text-align: center;
+		}
+		.des-info {
+			display: -webkit-box;
+			margin-top: 12px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 2;
+
+			/*! autoprefixer: off */
+			-webkit-box-orient: vertical;
+		}
+		.creator-time {
+			margin-top: 4px;
+			font-size: 12px;
+			color: rgb(0 0 0 / 45%);
+		}
+		.version-tool {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+}

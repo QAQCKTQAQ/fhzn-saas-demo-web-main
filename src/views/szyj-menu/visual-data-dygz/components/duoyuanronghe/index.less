@@ -1,0 +1,107 @@
+.mult-container {
+	display: flex;
+	height: calc(100% - 56px);
+	padding: 8px 8px 0;
+	margin-top: 64px;
+	overflow: hidden;
+	.code-data-time-select {
+		height: 100%;
+		padding: 8px 0;
+		background-color: #ffffff;
+		border-right: 1px solid #ffffff;
+		.ant-tabs-content-holder {
+			display: none;
+		}
+		.ant-tabs-tab {
+			background-color: #f0f2f5;
+		}
+		.ant-tabs-tab .anticon {
+			margin-right: 4px;
+		}
+		.ant-tabs-tab.ant-tabs-tab-active {
+			background-color: #1890ff;
+		}
+		.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+			color: #ffffff;
+			text-shadow: 0 0 0.25px currentcolor;
+		}
+	}
+	.mult-container-box {
+		width: 100%;
+		height: 100%;
+	}
+	.mult-container-item-box {
+		height: 100%;
+		padding: 16px;
+		overflow: auto;
+		background: #ffffff;
+		.mult-container-item {
+			padding: 8px;
+			background: #f0f2f5;
+			.item-box {
+				display: flex;
+				.img-box {
+					flex: 2;
+					height: 22vw;
+					padding: 16px;
+					overflow: hidden;
+					background: #ffffff;
+					.ant-image {
+						width: 100%;
+						height: 100%;
+						.ant-image-img {
+							display: flex;
+							justify-content: center;
+							width: auto;
+							max-width: 100%;
+							margin: auto;
+						}
+					}
+				}
+				.hwsb-view-box {
+					height: 100%;
+					overflow: auto;
+				}
+				.params-box {
+					flex: 1;
+					height: 22vw;
+					padding: 16px;
+					overflow-y: auto;
+					font-size: 12px;
+					color: #7a7d84;
+					background: #ffffffff;
+					.value {
+						color: rgb(0 0 0 / 85%);
+					}
+				}
+			}
+			.sar-img,
+			.infrared-img {
+				height: calc(100% - 56px);
+				background-size: cover;
+			}
+		}
+		.mult-container-ouput {
+			padding: 8px;
+			background: #ffffff;
+			.item-box {
+				display: flex;
+				.out-put-box {
+					flex: 1;
+					padding: 8px 0;
+					color: #7a7d84;
+					background: #ffffffff;
+					.value {
+						color: rgb(0 0 0 / 85%);
+					}
+				}
+			}
+		}
+		.select-title {
+			width: 100%;
+			.ant-tabs-nav {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

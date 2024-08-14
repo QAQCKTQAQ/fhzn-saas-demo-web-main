@@ -1,0 +1,42 @@
+.m-page-digital-dict {
+	.space-container {
+		display: flex;
+		height: 100%;
+	}
+	.tree-view {
+		width: 280px;
+		height: 100%;
+		padding: 16px;
+		margin-right: 8px;
+		overflow-y: auto;
+		background-color: #ffffff;
+		.tree-view-title {
+			padding: 0 0 8px 8px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+	.list-view {
+		flex: 1;
+		height: 100%;
+		padding: 24px;
+		overflow-y: auto;
+		background-color: #ffffff;
+		.handle-box {
+			color: @primary-color;
+			cursor: pointer;
+			.cancel {
+				color: #cccccc;
+			}
+		}
+		.disabled-handle-box {
+			color: #cccccc;
+		}
+		.add-active-iocn {
+			color: @primary-color;
+		}
+		.add-disabled-iocn {
+			color: #cccccc;
+		}
+	}
+}

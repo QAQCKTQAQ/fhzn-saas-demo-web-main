@@ -1,0 +1,49 @@
+.order-com-content {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: auto;
+	height: auto;
+	.order-list {
+		position: absolute;
+		right: 8px;
+		width: 36px;
+		height: 36px;
+	}
+	.content-list {
+		display: flex;
+		flex-direction: column;
+		width: 120px;
+		height: 120px;
+		border: 1px solid rgb(0 0 0 / 30%);
+		border-radius: 20px;
+		.left-icon {
+			width: 18px;
+		}
+		.right-content {
+			flex: 1;
+		}
+	}
+	.order-title {
+		font-size: 12px;
+		font-weight: 600;
+	}
+	.ant-select-item {
+		text-align: center;
+	}
+	.ant-select-item-option-content {
+		flex: auto;
+		overflow: hidden;
+		text-align: center !important;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.ant-select-single .ant-select-selector .ant-select-selection-item {
+		display: none !important;
+	}
+	.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+		font-weight: 600;
+		color: rgb(0 0 0 / 85%);
+		background-color: #1890ff;
+	}
+}

@@ -1,0 +1,79 @@
+.m-page-visual-more {
+	padding: 16px;
+	background: #f0f2f5;
+	.visual-more-container {
+		display: flex;
+		height: 100%;
+	}
+	.tree-view {
+		position: fixed;
+		top: 16px;
+		left: 16px;
+		width: 280px;
+		height: 100%;
+		padding: 24px 0;
+		overflow-y: auto;
+		background-color: #ffffff;
+		.tree-view-title {
+			padding: 0 0 16px 16px;
+			font-size: 16px;
+			font-weight: bold;
+			border-bottom: 1px solid #e5e5e5;
+		}
+		.ant-tree {
+			padding: 8px 0 0 8px;
+		}
+	}
+	.list-view {
+		flex: 1;
+		height: 100%;
+		margin-left: 256px;
+		overflow-y: auto;
+	}
+	.visual-container {
+		.header {
+			padding: 8px 16px;
+			margin-bottom: 8px;
+			background: #ffffff;
+		}
+		.ant-card-body {
+			position: relative;
+			height: 0;
+			padding-bottom: calc(100% - 116px);
+		}
+	}
+	.visual-container-box {
+		overflow: hidden;
+	}
+	.input-info-canvas,
+	.HRRP-info-canvas,
+	.BXJB-info-canvas,
+	.doppler-info-canvas {
+		position: absolute;
+		top: 24px;
+		left: 24px;
+		width: calc(100% - 48px);
+		height: calc(100% - 48px);
+		transform: translate3d(0, 0, 0);
+	}
+	.doppler-info-canvas {
+		background: #000000;
+		border-radius: 10px;
+	}
+	.sar-box,
+	.hb-box {
+		position: absolute;
+		top: 24px;
+		left: 24px;
+		display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+		width: calc(100% - 48px);
+		height: calc(100% - 48px);
+		overflow: hidden;
+		.ant-image {
+			height: 100%;
+		}
+	}
+}

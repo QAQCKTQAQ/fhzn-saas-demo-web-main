@@ -1,0 +1,43 @@
+variables:
+  NPM_REGISTRY: http://101.68.65.182:60003/repository/npm-proxy/
+  TAG: $CI_COMMIT_SHORT_SHA
+  BRANCH: $CI_COMMIT_REF_NAME
+  IMAGE_PROJECT: $CI_PROJECT_NAMESPACE
+  IMAGE_NAME: $CI_PROJECT_NAME
+
+  
+stages:
+  - check-pushimage
+
+sonarqube-check:
+  stage: check-pushimage
+  image: harbor.fhzny.com:60002/platform/sonar-scanner-cli:8b3b6e
+  tags:
+    - local_runner
+  script:
+    - ls
+    - sonar-scanner -Dsonar.projectKey=web_fhzn-saas-web_AYiaSPCP-fRQPIoHYdBY -Dsonar.sources=.  -Dsonar.host.url=http://192.168.1.12:31090/   -Dsonar.token=sqp_7eb55768fecb3bd109c6bd272c511d94060fd49c
+  allow_failure: true
+    
+pushimage:
+  stage: check-pushimage
+  #when: manual
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+  variables:
+  image: harbor.fhzny.com:60002/public/docker:20.10.21-dind
+  #services:
+    #- name: harbor.fhzny.com:60002/public/docker:18.09.9
+      #alias: docker
+  tags: 
+    - local_runner
+  script:
+    - date
+    - dockerd &
+    - sleep 10
+    
+    #- IMAGE_NAME=${IMAGE_NAME,,}
+    - IMAGE_NAME=`echo $IMAGE_NAME | tr 'A-Z' 'a-z'`
+    - docker login harbor.fhzny.com:60002 -u fhzn -p 755d48636edb9cdb8d79cd547d6c0c53
+    - docker build -t harbor.fhzny.com:60002/$IMAGE_PROJECT/$IMAGE_NAME:$TAG ./
+    - docker push harbor.fhzny.com:60002/$IMAGE_PROJECT/$IMAGE_NAME:$TAG

@@ -1,0 +1,115 @@
+.m-page-model-experiment-detail {
+	height: 100%;
+	overflow: hidden;
+	.layout-box {
+		display: flex;
+		height: 100%;
+		.side-left {
+			width: 280px;
+			height: 100%;
+			padding: 16px;
+			margin-right: 8px;
+			overflow-y: auto;
+			background: #ffffff;
+			.command-info {
+				padding: 8px;
+				word-break: break-all;
+				border: 1px solid #dddddd;
+				border-radius: 5px;
+			}
+		}
+		.side-right {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			height: 100%;
+			padding: 0 16px;
+			overflow: auto;
+			background-color: #ffffff;
+			.indicator-image-box {
+				padding: 8px;
+				border: 1px solid rgb(0 0 0 / 45%);
+				border-radius: 8px;
+			}
+			.mt16 {
+				margin-top: 16px;
+			}
+			.chart-group {
+				width: 100%;
+				height: auto;
+				.HRRP-info-canvas {
+					width: 100%;
+					height: 40vh;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			.data-table {
+				margin-top: 16px;
+				background-color: #ffffff;
+			}
+			.side-top-box {
+				padding: 16px;
+				margin-bottom: 16px;
+				background: #ffffff;
+				.box-container {
+					margin-bottom: 24px;
+				}
+				.image-info-edit-box {
+					display: flex;
+					justify-content: flex-end;
+					margin-bottom: 16px;
+					.ant-btn-link {
+						padding: 0;
+					}
+				}
+				.image-info-box {
+					.ant-form-item {
+						margin-bottom: 8px;
+					}
+				}
+			}
+			.side-bottom-box {
+				flex: 1;
+				padding: 16px;
+				background: #ffffff;
+			}
+		}
+	}
+	.ant-form-item {
+		margin-bottom: 16px;
+		.ant-form-item-label {
+			label {
+				color: #7a7d84;
+			}
+		}
+	}
+	.header-title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 10px;
+		margin-bottom: 16px;
+		font-size: 14px;
+		font-weight: 500;
+		color: #242a36;
+		.ant-btn-link {
+			padding: 0;
+		}
+	}
+	.header-title::before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 2px;
+		height: 60%;
+		margin: auto;
+		content: '';
+		background: #242a36;
+	}
+	.topology_content {
+		width: 100% !important;
+		height: 500px !important;
+	}
+}

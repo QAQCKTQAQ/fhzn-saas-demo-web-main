@@ -1,0 +1,86 @@
+.ds-item-detail {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.ds-version-detail-item {
+	display: flex;
+	height: 100%;
+	.file-detail-container {
+		display: flex;
+		flex: 1;
+		background: #ffffff;
+	}
+	.file-detail-swiper {
+		width: 100%;
+		.step-icon {
+			font-size: 20px;
+			color: @primary-color;
+			cursor: pointer;
+		}
+		.disabled {
+			color: #cccccc;
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+		.ant-col {
+			text-align: center;
+		}
+	}
+	.file-info {
+		width: 280px;
+		padding: 16px;
+		margin-right: 8px;
+		background: #ffffff;
+		.ant-page-header {
+			padding: 0;
+			padding-bottom: 16px;
+		}
+		.ant-form-item {
+			margin-bottom: 8px;
+			.ant-form-item-label {
+				label {
+					color: #7a7d84;
+				}
+			}
+		}
+		.label-btn {
+			display: flex;
+			align-items: center;
+			.anticon {
+				margin-left: 8px;
+			}
+		}
+	}
+	.image-container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 80vh;
+		.image-tool {
+			position: absolute;
+			bottom: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			height: 32px;
+			padding: 0 16px;
+			font-size: 18px;
+			color: #ffffff;
+			cursor: pointer;
+			background-color: rgb(0 0 0 / 50%);
+			border-radius: 32px;
+			.anticon {
+				padding: 6px;
+				border-radius: 4px;
+			}
+			.anticon:hover {
+				background: #000000;
+			}
+		}
+		.ant-image-mask {
+			display: none;
+		}
+	}
+}

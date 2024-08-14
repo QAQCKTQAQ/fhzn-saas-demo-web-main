@@ -1,0 +1,32 @@
+/**  关联用户列表样式 */
+.assgin-user-modal-list {
+	max-height: 500px;
+	padding: 24px;
+	overflow: auto;
+	border: 1px solid #d9d9d9;
+	.assgin-user-modal-list-li {
+		display: flex;
+		align-items: center;
+		margin-top: 16px;
+		.assgin-user-modal-list-nickname {
+			flex: 1;
+			margin-left: 8px;
+			overflow: hidden;
+			span {
+				color: @primary-color;
+			}
+			div,
+			span {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+.role-right-modal {
+	.ant-modal-body {
+		max-height: 60vh;
+		overflow-y: auto;
+	}
+}
