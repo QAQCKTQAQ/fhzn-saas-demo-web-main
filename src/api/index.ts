@@ -22,6 +22,8 @@ const config = {
 	headers: {
 		'x-requested-with': 'XMLHttpRequest',
 		'Content-Type': 'application/json;charset=utf-8'
+		// 'X-Login-User': 'xx',
+		// 'X-APP-CODE': 'xxx'
 	}
 }
 

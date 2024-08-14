@@ -223,8 +223,12 @@ export function randomNum(min: number, max: number): number {
 
 // RSA 加密
 export function rsaEnc(data: string) {
-	let pubkey =
-		'MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKVfZEIAXoiteXnO7640YJhW3JcMplaOFmee4HIxt4CgEm1ViF02teG5yQpbVzkp25Sf0LiL9vbCfXDZcRqWlSkCAwEAAQ=='
+	let pubkey = `
+-----BEGIN PUBLIC KEY-----
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMCPzoiP9peC1FpMxEpvibat980X5zHM
+sT5kQP8VgXHz5XqGpFei1yDPbY+YbpksM4Ieyy1gVTk/+QqaAmZZ1+UCAwEAAQ==
+-----END PUBLIC KEY-----
+`
 	let encrypt = new JSEncrypt()
 	encrypt.setPublicKey(pubkey)
 	return encrypt.encrypt(data)
