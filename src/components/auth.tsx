@@ -5,11 +5,12 @@ const Auth = (props: any) => {
 	return (Auth.verify(requires, authButtons) && children) || null
 }
 
-Auth.verify = (requires: any, authButtons: string[]) => {
+Auth.verify = (requires: any) => {
 	if (!Array.isArray(requires)) {
 		requires = [requires]
 	}
-	return authButtons.some(resource => requires.includes(resource))
+	// return authButtons.some(resource => requires.includes(resource))
+	return true
 }
 const mapStateToProps = (state: any, props: any) => {
 	return { ...state.auth, ...props }

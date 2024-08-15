@@ -13,7 +13,7 @@ const SearchForm = () => {
 
 	const formItems = [
 		{
-			name: [prefix, 'nickname'],
+			name: [prefix, 'name'],
 			label: '账号名称',
 			type: 'input'
 		},
@@ -25,11 +25,11 @@ const SearchForm = () => {
 				options: [
 					{
 						label: '启用',
-						value: '1'
+						value: '0'
 					},
 					{
 						label: '停用',
-						value: '2'
+						value: '1'
 					}
 				]
 			}

@@ -13,8 +13,8 @@ module.exports = {
 			url: API('/auth-service/gateWay/user/passwordCheck'),
 			data,
 			headers: {
-				'X-Login-User': 'your-username', // 直接指定 X-Login-User 的值
-				'X-APP-CODE': 'your-app-code' // 直接指定 X-APP-CODE 的值
+				'X-Login-User': 'xx', // 直接指定 X-Login-User 的值
+				'X-APP-CODE': 'xxx' // 直接指定 X-APP-CODE 的值
 			}
 		})
 	},

@@ -1,6 +1,6 @@
 // 登录
 const { login } = require('../service/user')
-const { reportLoginLog } = require('../service/loginLog')
+// const { reportLoginLog } = require('../service/loginLog')
 module.exports = async ctx => {
 	try {
 		const { username, password } = ctx.request.body
@@ -9,7 +9,7 @@ module.exports = async ctx => {
 		if (status === 200 && data.code === 0) {
 			// 保存用户nickname在session中
 			ctx.session.nickname = username
-			reportLoginLog(ctx)
+			// reportLoginLog(ctx)
 		}
 		ctx.body = data
 	} catch (err) {

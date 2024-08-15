@@ -20,8 +20,8 @@ export const SERACH_LAYOUT = {
 
 // 状态 - 启用停用
 export const STATUS_ENUM = {
-	ENABLE: '1',
-	DISABLED: '2'
+	ENABLE: '0',
+	DISABLED: '1'
 }
 export const STATUS_MAP = {
 	[STATUS_ENUM.ENABLE]: '启用',

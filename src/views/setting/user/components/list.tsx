@@ -1,11 +1,12 @@
 import { Table } from 'antd'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context } from '../store/reducerContent'
-import { STATUS_ENUM } from '@/const/constants'
+// import { STATUS_ENUM } from '@/const/constants'
 import PubSub from 'pubsub-js'
 import { ASYNC_SUBSCRIBE_MODAL, ASYNC_SUBSCRIBE_USER_AUTH_ROLE_MODAL } from '../const'
 import AuthRoleModal from './auth-role-modal'
 import Auth from '@/components/auth'
+import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
 
 const List: React.FC = () => {
 	const {
@@ -16,11 +17,20 @@ const List: React.FC = () => {
 		queryList
 	} = useContext(Context)
 
-	const renderStatus = (text: string) => {
+	const renderStatus = (text: Int16Array) => {
 		if (text) {
-			return `${text}` === `${STATUS_ENUM.ENABLE}` ? '启用' : '停用'
+			return `${text}` === '0' ? '启用' : '停用'
 		}
 		return '-'
+	}
+
+	const [visiblePasswords, setVisiblePasswords] = useState<{ [key: string]: boolean }>({})
+
+	const togglePasswordVisibility = (recordId: string) => {
+		setVisiblePasswords(prevState => ({
+			...prevState,
+			[recordId]: !prevState[recordId]
+		}))
 	}
 
 	const columns = [
@@ -29,20 +39,48 @@ const List: React.FC = () => {
 			render: (text: any, record: any, index: number) => `${index + 1}`
 		},
 		{
-			dataIndex: 'nickname',
+			dataIndex: 'username',
 			title: '账号'
 		},
 		{
-			dataIndex: 'nicknameCn',
+			dataIndex: 'password',
+			title: '密码',
+			render: (text: string, record: any) => (
+				<span>
+					{visiblePasswords[record.key] ? text : '******'}
+					<span onClick={() => togglePasswordVisibility(record.key)} style={{ marginLeft: 8, cursor: 'pointer' }}>
+						{visiblePasswords[record.key] ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+					</span>
+				</span>
+			)
+		},
+		{
+			dataIndex: 'name',
 			title: '用户名'
 		},
 		{
-			dataIndex: 'mobile',
+			dataIndex: 'phonenumber',
 			title: '手机号码'
+		},
+		{
+			dataIndex: 'type',
+			title: '所属部门'
 		},
 		{
 			dataIndex: 'createdTime',
 			title: '创建时间'
+		},
+		{
+			dataIndex: 'updatedTime',
+			title: '修改时间'
+		},
+		{
+			dataIndex: 'creator',
+			title: '创建人'
+		},
+		{
+			dataIndex: 'modifier',
+			title: '更新人'
 		},
 		{
 			dataIndex: 'status',

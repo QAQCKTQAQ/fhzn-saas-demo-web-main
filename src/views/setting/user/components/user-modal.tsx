@@ -101,22 +101,22 @@ function UserModal(props: any) {
 			>
 				<Row gutter={12}>
 					<Col span={12}>
-						<Form.Item name={'nickname'} label={'账号'} rules={[{ required: true, message: '请输入账号' }]}>
-							<Input placeholder={'请输入'} allowClear maxLength={50} disabled={!!record} showCount />
-						</Form.Item>
-					</Col>
-					<Col span={12}>
-						<Form.Item name={'nicknameCn'} rules={[{ required: true, message: '请输入用户姓名' }]} label={'用户姓名'}>
+						<Form.Item name={'username'} label={'账号'} rules={[{ required: true, message: '请输入账号' }]}>
 							<Input placeholder={'请输入'} allowClear maxLength={50} showCount />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
-						<Form.Item name={'mobile'} label={'手机号码'}>
+						<Form.Item name={'name'} rules={[{ required: true, message: '请输入用户姓名' }]} label={'用户姓名'}>
+							<Input placeholder={'请输入'} allowClear maxLength={50} showCount />
+						</Form.Item>
+					</Col>
+					<Col span={12}>
+						<Form.Item name={'phonenumber'} label={'手机号码'}>
 							<Input placeholder={'请输入'} allowClear maxLength={11} showCount />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
-						<Form.Item name={'email'} label={'电子邮箱'}>
+						<Form.Item name={'password'} rules={[{ required: true, message: '请输入密码' }]} label={'密码'}>
 							<Input placeholder={'请输入'} allowClear maxLength={50} showCount />
 						</Form.Item>
 					</Col>
@@ -128,6 +128,11 @@ function UserModal(props: any) {
 							rules={[{ required: true, message: '请选择用户状态' }]}
 						>
 							<Switch checkedChildren="启用" unCheckedChildren="停用" />
+						</Form.Item>
+					</Col>
+					<Col span={12}>
+						<Form.Item name={'type'} label={'类型'}>
+							<Input placeholder={'请输入'} allowClear maxLength={50} showCount />
 						</Form.Item>
 					</Col>
 				</Row>
