@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../store/reducerContent'
 // import { STATUS_ENUM } from '@/const/constants'
 import PubSub from 'pubsub-js'
-import { ASYNC_SUBSCRIBE_MODAL, ASYNC_SUBSCRIBE_USER_AUTH_ROLE_MODAL } from '../const'
+import { ASYNC_SUBSCRIBE_MODAL } from '../const'
 import AuthRoleModal from './auth-role-modal'
 import Auth from '@/components/auth'
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
@@ -26,10 +26,11 @@ const List: React.FC = () => {
 
 	const [visiblePasswords, setVisiblePasswords] = useState<{ [key: string]: boolean }>({})
 
+	// 切换特定行的密码显示状态
 	const togglePasswordVisibility = (recordId: string) => {
 		setVisiblePasswords(prevState => ({
 			...prevState,
-			[recordId]: !prevState[recordId]
+			[recordId]: !prevState[recordId] // 仅切换特定行的状态
 		}))
 	}
 
@@ -47,9 +48,9 @@ const List: React.FC = () => {
 			title: '密码',
 			render: (text: string, record: any) => (
 				<span>
-					{visiblePasswords[record.key] ? text : '******'}
-					<span onClick={() => togglePasswordVisibility(record.key)} style={{ marginLeft: 8, cursor: 'pointer' }}>
-						{visiblePasswords[record.key] ? <EyeInvisibleOutlined /> : <EyeOutlined />}
+					{visiblePasswords[record.id] ? text : '******'}
+					<span onClick={() => togglePasswordVisibility(record.id)} style={{ marginLeft: 8, cursor: 'pointer' }}>
+						{visiblePasswords[record.id] ? <EyeInvisibleOutlined /> : <EyeOutlined />}
 					</span>
 				</span>
 			)
@@ -94,9 +95,9 @@ const List: React.FC = () => {
 		render: (_: any, record: any) => {
 			return (
 				<span className="actions">
-					<Auth requires="SYSTEM_SETTINGS_USER_EDIT">
+					{/* <Auth requires="SYSTEM_SETTINGS_USER_EDIT">
 						<a onClick={() => PubSub.publish(ASYNC_SUBSCRIBE_USER_AUTH_ROLE_MODAL, record)}>角色分配</a>
-					</Auth>
+					</Auth> */}
 					<Auth requires="SYSTEM_SETTINGS_USER_ALLOT_ROLE">
 						<a onClick={() => PubSub.publish(ASYNC_SUBSCRIBE_MODAL, record)}>编辑</a>
 					</Auth>
