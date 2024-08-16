@@ -100,7 +100,6 @@ class RequestHttp {
 		return this.service.get(url, { params, ..._object })
 	}
 	post<T>(url: string, params?: object, _object = {}): Promise<ResultData<T>> {
-		console.log('by ckt just a jieko 01')
 		return this.service.post(url, params, _object)
 	}
 	formpost<T>(url: string, params?: any): Promise<ResultData<T>> {

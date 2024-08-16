@@ -14,7 +14,7 @@ const SearchForm = () => {
 	const formItems = [
 		{
 			name: [prefix, 'name'],
-			label: '账号名称',
+			label: '用户名',
 			type: 'input'
 		},
 		{

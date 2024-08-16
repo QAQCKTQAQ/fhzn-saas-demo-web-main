@@ -8,7 +8,7 @@ import LayoutHeader from './components/Header'
 import LayoutTabs from './components/Tabs'
 import LayoutFooter from './components/Footer'
 import './index.less'
-import { getMenuList } from '@/api/modules/login'
+// import { getMenuList } from '@/api/modules/login'
 import { findAllBreadcrumb } from '@/utils/util'
 import { setMenuList } from '@/redux/modules/menu/action'
 import { setBreadcrumbList } from '@/redux/modules/breadcrumb/action'
@@ -27,8 +27,8 @@ const defaultRouter = [
 	},
 	{
 		icon: 'HomeOutlined',
-		title: '示例',
-		path: '/demo',
+		title: '用户管理',
+		path: '/setting/user',
 		code: 'MANAGE'
 	}
 ]
@@ -50,7 +50,24 @@ const LayoutIndex = (props: any) => {
 	}
 
 	const getMenuData = async () => {
-		const res = await getMenuList()
+		// const res = await getMenuList()
+		const res = {
+			user: {
+				id: 1,
+				username: 'test',
+				role: 'test',
+				email: 'test',
+				avatar: 'test'
+			},
+			resourceList: [
+				{
+					icon: 'HomeOutlined',
+					title: '用户管理',
+					path: '/setting/user',
+					code: 'MANAGE'
+				}
+			]
+		}
 		const { user, resourceList = [] } = res
 		// 设置用户信息
 		setUserInfo(user)

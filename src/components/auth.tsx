@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
 const Auth = (props: any) => {
-	const { requires, children, authButtons } = props
-	return (Auth.verify(requires, authButtons) && children) || null
+	const { requires, children } = props
+	return (Auth.verify(requires) && children) || null
 }
 
 Auth.verify = (requires: any) => {

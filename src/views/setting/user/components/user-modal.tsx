@@ -102,7 +102,7 @@ function UserModal(props: any) {
 				<Row gutter={12}>
 					<Col span={12}>
 						<Form.Item name={'username'} label={'账号'} rules={[{ required: true, message: '请输入账号' }]}>
-							<Input placeholder={'请输入'} allowClear maxLength={50} showCount />
+							<Input placeholder={'请输入'} allowClear maxLength={50} disabled={!!record} showCount />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
