@@ -234,6 +234,25 @@ sT5kQP8VgXHz5XqGpFei1yDPbY+YbpksM4Ieyy1gVTk/+QqaAmZZ1+UCAwEAAQ==
 	return encrypt.encrypt(data)
 }
 
+// RSA 解密
+export function rsaDec(data: string) {
+	let privkey = `
+-----BEGIN PRIVATE KEY-----
+MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAx9w2mAPW0EtsPmSa
+dqyuvrz/TgjbfMf8w0RulPjQbH/oz/YIPIUizSQfVeol6+mIdkjw3ReI40VGg/eF
+km9P5QIDAQABAkB5eU4xXPv+hCkZTxpXESPwyHzAWD/XetIVeQ1hPE2p840am1QV
+NJET+TzIw637pkmimU9uR6l09S9XU3Ra9WUBAiEA7oRmd1LfmitdF7sjo9owINeu
+NlprjYgRidWT1fmz6UECIQDWgnFzsWAijRS+mIRBaCGZ5bsCpdhi8+s1VC8GyWq5
+pQIhAJZ5zTNGg27+IJMSK1/6DRcLOwtrbCM0TuxIZCZAjLKBAiEAu4XVQFpzvECx
+Pd1+4N7zYOJgFfR9siOiH0C0y64QyrECIFanlrKIezqsqx8hmwHKtGmTympdMv2A
+rs6N3PC5F+XH
+-----END PRIVATE KEY-----
+ `
+	let decrypt = new JSEncrypt()
+	decrypt.setPrivateKey(privkey)
+	return decrypt.decrypt(data)
+}
+
 // 穿梭框数据格式
 export function transformArray(list: any[], idKey: string, keyName: string, chosen = false) {
 	const tempArr: any = []
