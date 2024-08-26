@@ -237,17 +237,17 @@ sT5kQP8VgXHz5XqGpFei1yDPbY+YbpksM4Ieyy1gVTk/+QqaAmZZ1+UCAwEAAQ==
 // RSA 解密
 export function rsaDec(data: string) {
 	let privkey = `
------BEGIN PRIVATE KEY-----
-MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAx9w2mAPW0EtsPmSa
-dqyuvrz/TgjbfMf8w0RulPjQbH/oz/YIPIUizSQfVeol6+mIdkjw3ReI40VGg/eF
-km9P5QIDAQABAkB5eU4xXPv+hCkZTxpXESPwyHzAWD/XetIVeQ1hPE2p840am1QV
-NJET+TzIw637pkmimU9uR6l09S9XU3Ra9WUBAiEA7oRmd1LfmitdF7sjo9owINeu
-NlprjYgRidWT1fmz6UECIQDWgnFzsWAijRS+mIRBaCGZ5bsCpdhi8+s1VC8GyWq5
-pQIhAJZ5zTNGg27+IJMSK1/6DRcLOwtrbCM0TuxIZCZAjLKBAiEAu4XVQFpzvECx
-Pd1+4N7zYOJgFfR9siOiH0C0y64QyrECIFanlrKIezqsqx8hmwHKtGmTympdMv2A
-rs6N3PC5F+XH
------END PRIVATE KEY-----
- `
+	-----BEGIN PRIVATE KEY-----
+  MIIBVwIBADANBgkqhkiG9w0BAQEFAASCAUEwggE9AgEAAkEAwI/OiI/2l4LUWkzE
+	Sm+Jtq33zRfnMcyxPmRA/xWBcfPleoakV6LXIM9tj5humSwzgh7LLWBVOT/5CpoC
+  ZlnX5QIDAQABAkEApDU+C8iwoW2IxuR184AAMQ9TpMsAdcA3WZxGrQBa3Z9/psdQ
+  QgSba/CEGs3y7cBmAAyHP7M54ZSIqK6gJSyo4QIhAP912YAfAadHAj6vHQhq6I33
+  pDts/3vm71wK50Gz5MNtAiEAwPfxNclcdN2B7n+n0bMaK3fzvLy5sDmCN13Q5h9C
+  I1kCIQD2Cvq2VKbSBylZWG29GsLrYXWzqrKTEoS9gN7lQC94LQIhALCA2a/x+9Cl
+  X5hwSWdE5FYIRPhIw6wOHi5YcKBczRkZAiEA8aYfZf/GxhcvZYQL4qPd57bQiflf
+  /OQyGGCLhCV5bgc=
+  -----END PRIVATE KEY-----
+	`
 	let decrypt = new JSEncrypt()
 	decrypt.setPrivateKey(privkey)
 	return decrypt.decrypt(data)

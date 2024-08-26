@@ -4,6 +4,7 @@
 
 import produce from 'immer'
 import { userQueryApi } from '@/api/modules/user'
+import { rsaDec } from '@/utils/util'
 
 const QUERY = 'QUERY'
 const FETCHING = 'FETCHING'
@@ -12,8 +13,16 @@ const REJECTED = 'REJECTED'
 // 响应数据处理为state格式
 const handleResToState = (data: any) => {
 	const { items = [], params, ...rest } = data
+
+	const decryptedItems = items.map((item: any) => {
+		return {
+			...item,
+			password: item.password ? rsaDec(item.password) : item.password
+		}
+	})
+
 	return {
-		dataSource: items,
+		dataSource: decryptedItems,
 		params,
 		pageInfo: rest
 	}

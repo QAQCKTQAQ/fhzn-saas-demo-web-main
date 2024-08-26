@@ -4,6 +4,7 @@ import { userAddApi, userUpdateApi } from '@/api/modules/user'
 import PubSub from 'pubsub-js'
 import { ASYNC_SUBSCRIBE_MODAL } from '../const'
 import { STATUS_ENUM } from '@/const/constants'
+import { rsaEnc } from '@/utils/util'
 
 interface UserRecord {
 	id?: any
@@ -48,10 +49,13 @@ function UserModal(props: any) {
 
 	// 处理提交数据
 	const handleSubmitData = (data: any) => {
-		const { status, ...rest } = data
+		const { status, password, ...rest } = data
+		// 假设有一个加密函数 encryptPassword，你可以在这里对密码进行加密
+		const encryptedPassword = password ? rsaEnc(password) : password
 		return {
 			...rest,
-			status: status ? STATUS_ENUM.ENABLE : STATUS_ENUM.DISABLED
+			status: status ? STATUS_ENUM.ENABLE : STATUS_ENUM.DISABLED,
+			password: encryptedPassword // 使用加密后的密码
 		}
 	}
 

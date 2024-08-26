@@ -9,13 +9,25 @@ apiPrefix: /api
 
 # 后端 Java 服务接口地址
 backendMap:
-  development: http://localhost:18081
-  test: http://localhost:18081
-  staging: http://localhost:18081
-  production: http://localhost:18081
+  development: http://server-demo:18081
+  test: http://server-demo:18081
+  staging: http://server-demo:18081
+  production: http://server-demo:18081
 
 authMap:
-  development: http://localhost:18081
-  test: http://localhost:18081
-  staging: http://localhost:18081
-  production: http://localhost:18081
+  development: http://server-demo:18081
+  test: http://server-demo:18081
+  staging: http://server-demo:18081
+  production: http://server-demo:18081
+
+# backendMap:
+#   development: http://localhost:18081
+#   test: http://localhost:18081
+#   staging: http://localhost:18081
+#   production: http://localhost:18081
+
+# authMap:
+#   development: http://localhost:18081
+#   test: http://localhost:18081
+#   staging: http://localhost:18081
+#   production: http://localhost:18081
