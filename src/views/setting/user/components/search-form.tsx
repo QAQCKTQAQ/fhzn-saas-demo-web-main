@@ -18,6 +18,11 @@ const SearchForm = () => {
 			type: 'input'
 		},
 		{
+			name: [prefix, 'type'],
+			label: '所属部门',
+			type: 'input'
+		},
+		{
 			name: [prefix, 'status'],
 			label: '用户状态',
 			type: 'select',

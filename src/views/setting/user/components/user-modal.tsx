@@ -105,23 +105,51 @@ function UserModal(props: any) {
 			>
 				<Row gutter={12}>
 					<Col span={12}>
-						<Form.Item name={'username'} label={'账号'} rules={[{ required: true, message: '请输入账号' }]}>
+						<Form.Item
+							name={'username'}
+							label={'账号'}
+							rules={[
+								{ required: true, message: '请输入账号' },
+								{ min: 3, message: '账号至少3位' }
+							]}
+						>
 							<Input placeholder={'请输入'} allowClear maxLength={20} disabled={!!record} showCount />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
-						<Form.Item name={'name'} rules={[{ required: true, message: '请输入用户姓名' }]} label={'用户姓名'}>
+						<Form.Item
+							name={'name'}
+							label={'用户姓名'}
+							rules={[
+								{ required: true, message: '请输入用户姓名' },
+								{ min: 3, message: '用户姓名至少3位' }
+							]}
+						>
 							<Input placeholder={'请输入'} allowClear maxLength={20} showCount />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
-						<Form.Item name={'phonenumber'} label={'手机号码'}>
+						<Form.Item
+							name={'phonenumber'}
+							label={'手机号码'}
+							rules={[
+								{ pattern: /^\d+$/, message: '手机号必须为全数字' },
+								{ len: 11, message: '手机号必须为11位数字' }
+							]}
+						>
 							<Input placeholder={'请输入'} allowClear maxLength={11} showCount />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
-						<Form.Item name={'password'} rules={[{ required: true, message: '请输入密码' }]} label={'密码'}>
-							<Input placeholder={'请输入'} allowClear maxLength={20} showCount />
+						<Form.Item
+							name={'password'}
+							label={'密码'}
+							rules={[
+								{ required: true, message: '请输入密码' },
+								{ min: 3, message: '密码至少3位' }
+							]}
+						>
+							<Input.Password placeholder={'请输入'} allowClear maxLength={20} showCount />
 						</Form.Item>
 					</Col>
 					<Col span={12}>
