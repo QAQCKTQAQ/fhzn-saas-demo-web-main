@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Form, Input, Modal, message, Row, Col, Switch } from 'antd'
 import { userAddApi, userUpdateApi } from '@/api/modules/user'
 import PubSub from 'pubsub-js'
-import { ASYNC_SUBSCRIBE_MODAL } from '../const'
+import { ASYNC_SUBSCRIBE_P_P_MODAL } from '../const'
 import { STATUS_ENUM } from '@/const/constants'
 import { rsaEnc } from '@/utils/util'
 
@@ -18,9 +18,9 @@ function UserModal(props: any) {
 	const [record, setRecord] = useState<UserRecord | null>(null)
 
 	useEffect(() => {
-		PubSub.subscribe(ASYNC_SUBSCRIBE_MODAL, showModal)
+		PubSub.subscribe(ASYNC_SUBSCRIBE_P_P_MODAL, showModal)
 		return () => {
-			PubSub.unsubscribe(ASYNC_SUBSCRIBE_MODAL)
+			PubSub.unsubscribe(ASYNC_SUBSCRIBE_P_P_MODAL)
 		}
 	}, [])
 
@@ -163,7 +163,7 @@ function UserModal(props: any) {
 						</Form.Item>
 					</Col>
 					<Col span={12}>
-						<Form.Item name={'type'} label={'类型'}>
+						<Form.Item name={'type'} label={'所属部门'}>
 							<Input placeholder={'请输入'} allowClear maxLength={10} showCount />
 						</Form.Item>
 					</Col>

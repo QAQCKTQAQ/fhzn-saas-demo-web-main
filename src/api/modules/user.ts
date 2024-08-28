@@ -19,6 +19,11 @@ export const userUpdateApi = (data: any) => {
 	return http.post(AuthService + `/v2/user/update`, data)
 }
 
+// * 用户删除
+export const userDeleteApi = (data: any) => {
+	return http.post(AuthService + `/v2/user/delete`, data)
+}
+
 // * 获取用户角色
 export const authRoleQueryApi = (params?: any) => {
 	return http.get(AuthService + `/auth/query`, params)

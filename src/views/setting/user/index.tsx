@@ -4,7 +4,7 @@ import { ReducerContent } from './store/reducerContent'
 import Tool from './components/tool'
 import './index.less'
 import { Row, Col } from 'antd'
-import UserModal from './components/user-modal'
+// import UserModal from './components/user-modal'
 const User = () => {
 	return (
 		<ReducerContent>
@@ -13,9 +13,7 @@ const User = () => {
 					<Col span={24}>
 						<SearchForm />
 					</Col>
-					<Col span={24}>
-						<UserModal />
-					</Col>
+					<Col span={24}>{/* <UserModal /> */}</Col>
 					<Col span={12}>
 						<Tool />
 					</Col>

@@ -4,7 +4,7 @@ import { PlusOutlined } from '@ant-design/icons'
 import UseModal from './user-modal'
 import { Context } from '../store/reducerContent'
 import PubSub from 'pubsub-js'
-import { ASYNC_SUBSCRIBE_MODAL } from '../const'
+import { ASYNC_SUBSCRIBE_P_P_MODAL } from '../const'
 //import Auth from '@/components/auth'
 // 修改 by ckt
 export default function Tool() {
@@ -17,7 +17,7 @@ export default function Tool() {
 					{/* <Auth requires="SYSTEM_SETTINGS_USER_ADD"> */}
 					<Button
 						onClick={() => {
-							PubSub.publish(ASYNC_SUBSCRIBE_MODAL)
+							PubSub.publish(ASYNC_SUBSCRIBE_P_P_MODAL)
 						}}
 						icon={<PlusOutlined />}
 						type="primary"

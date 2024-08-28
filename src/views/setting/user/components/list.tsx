@@ -1,12 +1,12 @@
-import { Table } from 'antd'
+import { Table, Modal, message } from 'antd'
 import React, { useContext, useState } from 'react'
 import { Context } from '../store/reducerContent'
-// import { STATUS_ENUM } from '@/const/constants'
 import PubSub from 'pubsub-js'
-import { ASYNC_SUBSCRIBE_MODAL } from '../const'
+import { ASYNC_SUBSCRIBE_P_P_MODAL } from '../const'
 import AuthRoleModal from './auth-role-modal'
 import Auth from '@/components/auth'
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
+import { userDeleteApi } from '@/api/modules/user'
 
 const List: React.FC = () => {
 	const {
@@ -26,12 +26,28 @@ const List: React.FC = () => {
 
 	const [visiblePasswords, setVisiblePasswords] = useState<{ [key: string]: boolean }>({})
 
-	// 切换特定行的密码显示状态
 	const togglePasswordVisibility = (recordId: string) => {
 		setVisiblePasswords(prevState => ({
 			...prevState,
-			[recordId]: !prevState[recordId] // 仅切换特定行的状态
+			[recordId]: !prevState[recordId]
 		}))
+	}
+
+	// 删除操作
+	const queryDelete = (data: any) => {
+		Modal.confirm({
+			title: '确认删除',
+			content: `确定要删除账号为 ${data.username} 的用户吗？`,
+			okText: '确认',
+			cancelText: '取消',
+			onOk: () => {
+				// 执行删除逻辑，例如调用API删除用户
+				userDeleteApi(data) // 你需要实现的删除API
+				message.success(`用户 账号：${data.username} 已删除`)
+				// 重新查询列表以刷新页面
+				queryList()
+			}
+		})
 	}
 
 	const columns = [
@@ -95,12 +111,10 @@ const List: React.FC = () => {
 		render: (_: any, record: any) => {
 			return (
 				<span className="actions">
-					{/* <Auth requires="SYSTEM_SETTINGS_USER_EDIT">
-						<a onClick={() => PubSub.publish(ASYNC_SUBSCRIBE_USER_AUTH_ROLE_MODAL, record)}>角色分配</a>
-					</Auth> */}
 					<Auth requires="SYSTEM_SETTINGS_USER_ALLOT_ROLE">
-						<a onClick={() => PubSub.publish(ASYNC_SUBSCRIBE_MODAL, record)}>编辑</a>
+						<a onClick={() => PubSub.publish(ASYNC_SUBSCRIBE_P_P_MODAL, record)}>编辑</a>
 					</Auth>
+					<a onClick={() => queryDelete(record)}>删除</a>
 				</span>
 			)
 		}
