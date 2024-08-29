@@ -50,7 +50,6 @@ function UserModal(props: any) {
 	// 处理提交数据
 	const handleSubmitData = (data: any) => {
 		const { status, password, ...rest } = data
-		// 假设有一个加密函数 encryptPassword，你可以在这里对密码进行加密
 		const encryptedPassword = password ? rsaEnc(password) : password
 		return {
 			...rest,
@@ -119,10 +118,10 @@ function UserModal(props: any) {
 					<Col span={12}>
 						<Form.Item
 							name={'name'}
-							label={'用户姓名'}
+							label={'用户名'}
 							rules={[
-								{ required: true, message: '请输入用户姓名' },
-								{ min: 3, message: '用户姓名至少3位' }
+								{ required: true, message: '请输入用户名' },
+								{ min: 3, message: '用户名至少3位' }
 							]}
 						>
 							<Input placeholder={'请输入'} allowClear maxLength={20} showCount />

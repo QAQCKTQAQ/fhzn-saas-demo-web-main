@@ -7,6 +7,8 @@ import AuthRoleModal from './auth-role-modal'
 import Auth from '@/components/auth'
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
 import { userDeleteApi } from '@/api/modules/user'
+import dayjs from 'dayjs'
+import { rsaEnc } from '@/utils/util'
 
 const List: React.FC = () => {
 	const {
@@ -16,6 +18,9 @@ const List: React.FC = () => {
 		},
 		queryList
 	} = useContext(Context)
+
+	// 对数据源按照 id 进行倒序排序
+	const sortedDataSource = [...dataSource].sort((a, b) => b.id - a.id)
 
 	const renderStatus = (text: Int16Array) => {
 		if (text) {
@@ -42,12 +47,20 @@ const List: React.FC = () => {
 			cancelText: '取消',
 			onOk: () => {
 				// 执行删除逻辑，例如调用API删除用户
-				userDeleteApi(data) // 你需要实现的删除API
+				userDeleteApi(handleSubmitData(data))
 				message.success(`用户 账号：${data.username} 已删除`)
-				// 重新查询列表以刷新页面
-				queryList()
+				queryList({})
 			}
 		})
+	}
+
+	const handleSubmitData = (data: any) => {
+		const { password, ...rest } = data
+		const encryptedPassword = password ? rsaEnc(password) : password
+		return {
+			...rest,
+			password: encryptedPassword
+		}
 	}
 
 	const columns = [
@@ -85,11 +98,13 @@ const List: React.FC = () => {
 		},
 		{
 			dataIndex: 'createdTime',
-			title: '创建时间'
+			title: '创建时间',
+			render: (text: string) => dayjs(text).format('YYYY-MM-DD HH:mm:ss')
 		},
 		{
 			dataIndex: 'updatedTime',
-			title: '修改时间'
+			title: '修改时间',
+			render: (text: string) => dayjs(text).format('YYYY-MM-DD HH:mm:ss')
 		},
 		{
 			dataIndex: 'creator',
@@ -125,7 +140,7 @@ const List: React.FC = () => {
 			<Table
 				rowKey="id"
 				columns={[...columns, operateColumn]}
-				dataSource={dataSource}
+				dataSource={sortedDataSource}
 				scroll={{ x: 'max-content' }}
 				loading={loading}
 				pagination={{
